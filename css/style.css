@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    font-size: 1rem;
+    height: 100vh;
+
+}
+
+button {
+    width: 100%;
+    background-color: rgba(255, 0, 0, 0.459);
+    cursor: pointer;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.4rem 0;
+}
+
+button:hover {
+    background-color: bisque;
+}
+
+input {
+    height: 2rem;
+    border-radius: 0.2rem;
+    margin-top: 0.2rem;
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+.main {
+    display: flex;
+}
+
+.container {
+    flex: 1 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin-top: 2rem;
+    border-right: 0.1rem solid black;
+}
+
+
+.container-details {
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.421);
+    border-radius: 0.5rem;
+    width: 20rem;
+}
+
+.container-details > div {
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+tbody td:last-child {
+    display: flex;
+}
+
+tbody td:last-child button {
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.44);
+    margin: 0 2px;
+}
+
+tbody > tr:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+.listSV {
+    flex: 2 1;
+    padding: 1rem;
+}
+
+.listSV h1 {
+    margin-bottom: 1rem;
+}
+
+
+   

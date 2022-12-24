@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS || OOP</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="container"> 
+            <form id="form">
+                <div class="container-details">
+                    <div class="form-group">
+                        <label for="maSV">Ma Sinh Vien</label>
+                        <input type="text" id="maSV">
+                    </div>
+                    <div class="form-group">
+                        <label for="hoTen">Ho Ten</label>
+                        <input type="text" id="hoTen" >
+                    </div>
+                    <div class="form-group">
+                        <label for="lop">Lop</label>
+                        <input type="text" id="lop">
+                    </div>
+                    <div class="form-group">
+                        <label for="ns">Ngay Sinh</label>
+                        <input type="text" id="ns" >
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" >
+                    </div> 
+                    <div class="form-group">
+                        <label for="gpa">GPA</label>
+                        <input type="text" id="gpa" >
+                    </div> 
+
+                    <button type="submit" id="button-submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="listSV">
+            <div class="SV-content">
+                <h1>Danh Sach Sinh Vien</h1>
+                <div class="sinhVien-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>MSV</th>
+                                <th>HO TEN</th>
+                                <th>LOP</th>
+                                <th>NGAY SINH</th>
+                                <th>EMAIL</th>
+                                <th>GPA</th>
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sinhVien">
+                            <tr>
+                                <!-- <td>B19DCVT410</td>
+                                <td>Trieu</td>
+                                <td>D19CQVT02-B</td>
+                                <td>03042001</td>
+                                <td>trieu@gmail.com</td>
+                                <td>1.78</td>
+                                <td>
+                                    <button type="button" id="edit-button">EDIT</button>
+                                    <button type="button" id="delete-button">DELETE</button>
+                                </td> -->
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
