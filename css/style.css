@@ -69,21 +69,23 @@ table {
 
 tbody td:last-child {
     display: flex;
+    padding: 0 5px;
 }
 
 thead th {
-    background-color: #f0f0f0;
+    background-color: rgba(255, 0, 0, 0.459);
 }
 
 tbody td:last-child button {
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.44);
-    margin: 0 2px;
+    margin: 5px 2px;
+    padding: 3px 0px;
 }
 
 tbody > tr:nth-child(odd) {
-    background-color: #f0f0f0#f0f0f0;
+    background-color: #f0f0f0;
 }
 
 .listSV {
@@ -94,6 +96,21 @@ tbody > tr:nth-child(odd) {
 .listSV h1 {
     margin-bottom: 1rem;
 }
+
+.fa-pen-to-square,
+.fa-trash-can {
+    margin-right: 3px;
+}
+
+tbody td:last-child button:hover .fa-trash-can{
+    color: red;
+}
+
+tbody td:last-child button:hover .fa-pen-to-square{
+    color: rgb(43, 229, 43);
+}
+
+
 
 
    

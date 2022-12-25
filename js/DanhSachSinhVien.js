@@ -33,8 +33,8 @@ export class DanhSachSinhVien {
                     <td>${item.email}</td>
                     <td>${item.gpa}</td>
                     <td>
-                        <button type="button" data-action="edit" id="${index}">EDIT</button>
-                        <button type="button" data-action="delete" id="${index}">DELETE</button>
+                        <button type="button" data-action="edit" id="${index}"><i class="fa-regular fa-pen-to-square"></i>Edit</button>
+                        <button type="button" data-action="delete" id="${index}"><i class="fa-solid fa-trash-can"></i>Delete</button>
                     </td>
                  </tr>
                 `;

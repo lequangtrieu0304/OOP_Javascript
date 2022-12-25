@@ -27,9 +27,6 @@ const saveSinhVien = () => {
     if(maSV === '' || hoTen === '' || lop === '' || ns === '' || gpa === ''){
         alert('Ban can dien du cac truong');
     }
-    else if(isDuplicate){
-        alert("sinh vien da ton tai");
-    }
     else{
         if(editId >= 0){
             const updateSinhVien = new SinhVien(maSV, hoTen, lop, ns, email, gpa);
@@ -41,11 +38,16 @@ const saveSinhVien = () => {
             editId = -1;
         }
         else {
-            const sinhVien = new SinhVien(maSV, hoTen, lop, ns, email, gpa);
-            listSinhVien.themSV(sinhVien);
-            showDanhSach(tdBody);
-            
-            setLocalStorage();
+            if(isDuplicate){
+                alert("sinh vien da ton tai");
+            }
+            else {
+                const sinhVien = new SinhVien(maSV, hoTen, lop, ns, email, gpa);
+                listSinhVien.themSV(sinhVien);
+                showDanhSach(tdBody);
+                
+                setLocalStorage();
+            }
         }
     };
     
@@ -56,7 +58,6 @@ const saveSinhVien = () => {
     emailInput.value = '';
     gpaInput.value = '';
 }
-console.log(listSinhVien);
 
 document.getElementById('form').addEventListener('submit', (e) => {
     e.preventDefault();
