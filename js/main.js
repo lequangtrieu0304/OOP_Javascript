@@ -12,6 +12,8 @@ const gpaInput = document.getElementById('gpa');
 
 let tdBody = document.getElementById('sinhVien');
 
+let editId = -1;
+
 const saveSinhVien = () => {
     let maSV = maSVInput.value;
     let hoTen = hoTenInput.value;
@@ -20,16 +22,32 @@ const saveSinhVien = () => {
     let email = emailInput.value;
     let gpa = gpaInput.value;
 
-    if(maSV === '' || hoTen === '' || email === '' || lop === '' || ns === '' || gpa === ''){
+    let isDuplicate = listSinhVien.dssv.some((sv) => sv.maSV.toUpperCase() === maSV.toUpperCase());
+
+    if(maSV === '' || hoTen === '' || lop === '' || ns === '' || gpa === ''){
         alert('Ban can dien du cac truong');
     }
-    else{
-        const sinhVien = new SinhVien(maSV, hoTen, lop, ns, email, gpa);
-        listSinhVien.themSV(sinhVien);
-        showDanhSach(tdBody);
-
-        setLocalStorage();
+    else if(isDuplicate){
+        alert("sinh vien da ton tai");
     }
+    else{
+        if(editId >= 0){
+            const updateSinhVien = new SinhVien(maSV, hoTen, lop, ns, email, gpa);
+            listSinhVien.suaSV(editId, updateSinhVien);
+           
+            showDanhSach(tdBody);
+            setLocalStorage();
+    
+            editId = -1;
+        }
+        else {
+            const sinhVien = new SinhVien(maSV, hoTen, lop, ns, email, gpa);
+            listSinhVien.themSV(sinhVien);
+            showDanhSach(tdBody);
+            
+            setLocalStorage();
+        }
+    };
     
     maSVInput.value = '';
     hoTenInput.value = '';
@@ -38,6 +56,7 @@ const saveSinhVien = () => {
     emailInput.value = '';
     gpaInput.value = '';
 }
+console.log(listSinhVien);
 
 document.getElementById('form').addEventListener('submit', (e) => {
     e.preventDefault();
@@ -82,3 +101,13 @@ const deleteSinhVien = (id) => {
     showDanhSach(tdBody);
 }
 
+const editSinhVien = (id) => {
+    maSVInput.value = listSinhVien.dssv[id].maSV;
+    hoTenInput.value = listSinhVien.dssv[id].hoTen;
+    lopInput.value = listSinhVien.dssv[id].lop;
+    nsInput.value = listSinhVien.dssv[id].ngaySinh;
+    emailInput.value = listSinhVien.dssv[id].email;
+    gpaInput.value = listSinhVien.dssv[id].gpa;
+
+    editId = id;
+}

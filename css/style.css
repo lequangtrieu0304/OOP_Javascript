@@ -71,6 +71,10 @@ tbody td:last-child {
     display: flex;
 }
 
+thead th {
+    background-color: #f0f0f0;
+}
+
 tbody td:last-child button {
     background-color: #fff;
     border-radius: 5px;
@@ -79,7 +83,7 @@ tbody td:last-child button {
 }
 
 tbody > tr:nth-child(odd) {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0#f0f0f0;
 }
 
 .listSV {

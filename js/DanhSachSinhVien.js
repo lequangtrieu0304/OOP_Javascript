@@ -1,29 +1,26 @@
-export class DanhSachSinhVien{
+export class DanhSachSinhVien {
     constructor() {
         this.dssv = [];
     }
 
-    themSV(SinhVien){
-        if(this.dssv.length === 0){
-            this.dssv.push(SinhVien);
-        }
-        else {
-            for(let i = 0; i < this.dssv.length; i++){
-                if(this.dssv[i].maSV !== SinhVien.maSV){
-                    this.dssv.push(SinhVien);
-                }
-                else {
-                    alert('Sinh vien da ton tai');
-                }
-            }
-        }
+    themSV(SinhVien) {
+        this.dssv.push(SinhVien);
     };
 
-    xoaSV(index){
+    xoaSV(index) {
         this.dssv.splice(index, 1);
     }
 
-    inDanhSach(){
+    suaSV(index, sinhVien) {
+        this.dssv[index].maSV = sinhVien.maSV || this.dssv[index].maSV;
+        this.dssv[index].hoTen = sinhVien.hoTen || this.dssv[index].hoTen;
+        this.dssv[index].lop = sinhVien.lop || this.dssv[index].lop;
+        this.dssv[index].ngaySinh = sinhVien.ngaySinh || this.dssv[index].ngaySinh;
+        this.dssv[index].email = sinhVien.email || this.dssv[index].email;
+        this.dssv[index].gpa = sinhVien.gpa || this.dssv[index].gpa;
+    }
+
+    inDanhSach() {
         let content = '';
 
         content = this.dssv.reduce((tdContent, item, index) => {
@@ -41,7 +38,7 @@ export class DanhSachSinhVien{
                     </td>
                  </tr>
                 `;
-                return tdContent;
+            return tdContent;
         }, '');
 
         return content;
