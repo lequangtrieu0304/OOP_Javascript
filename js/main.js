@@ -74,6 +74,8 @@ const setLocalStorage = () => {
     localStorage.setItem('listSV', JSON.stringify(danhSachSinhVien));
 }
 
+console.log(listSinhVien);
+
 const getLocalStorage = () => {
     let danhSachSinhVien = localStorage.getItem('listSV');
     if(danhSachSinhVien){

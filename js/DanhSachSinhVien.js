@@ -1,6 +1,7 @@
 export class DanhSachSinhVien {
     constructor() {
         this.dssv = [];
+        this.name = "Trieu";
     }
 
     themSV(SinhVien) {
