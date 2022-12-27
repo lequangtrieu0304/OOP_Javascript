@@ -72,9 +72,10 @@ const showDanhSach = (domSinhVien) => {
 const setLocalStorage = () => {
     let danhSachSinhVien = listSinhVien.dssv;
     localStorage.setItem('listSV', JSON.stringify(danhSachSinhVien));
+    console.log(listSinhVien.sapXepTheoTen());
 }
 
-console.log(listSinhVien);
+
 
 const getLocalStorage = () => {
     let danhSachSinhVien = localStorage.getItem('listSV');
@@ -114,3 +115,16 @@ const editSinhVien = (id) => {
 
     editId = id;
 }
+
+let sapXepDiem = document.getElementById("sapXep-diem");
+let sapXepTen = document.getElementById('sapXep-ten');
+
+sapXepDiem.addEventListener('click', () => {
+    listSinhVien.sapXepTheoGpa();
+    showDanhSach(tdBody);
+});
+
+sapXepTen.addEventListener('click', () => {
+    listSinhVien.sapXepTheoTen();
+    showDanhSach(tdBody);
+})

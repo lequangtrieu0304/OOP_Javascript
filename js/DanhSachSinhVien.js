@@ -21,6 +21,33 @@ export class DanhSachSinhVien {
         this.dssv[index].gpa = sinhVien.gpa || this.dssv[index].gpa;
     }
 
+    sapXepTheoGpa(){
+       return this.dssv.sort((a, b) => a.gpa < b.gpa ? 1 : a.gpa > b.gpa ? -1 : 0);
+    }
+
+    sapXepTheoTen(){
+        return this.dssv.sort((a, b) => {
+            let words1 = a.hoTen.split(" ");
+            let words2 = b.hoTen.split(" ");
+            if (words1[words1.length-1].toLowerCase() < words2[words2.length-1].toLowerCase()){
+                return -1;
+            }
+            if (words1[words1.length-1].toLowerCase() > words2[words2.length-1].toLowerCase()) {
+                return 1;
+            }
+
+            for(let i = 0; i < Math.min(words1.length, words2.length); i++){
+                if(words1[i].toLowerCase() < words2[i].toLowerCase()){
+                    return -1;
+                }
+                if(words1[i].toLowerCase() > words2[i].toLowerCase()){
+                    return 1;
+                }
+            }
+            return words1.length < words2.length ? 1 : words1.length > words2.length ? -1 : 0;
+        });
+    }
+
     inDanhSach() {
         let content = '';
 
