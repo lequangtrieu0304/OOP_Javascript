@@ -44,7 +44,7 @@ export class DanhSachSinhVien {
                     return 1;
                 }
             }
-            return words1.length < words2.length ? 1 : words1.length > words2.length ? -1 : 0;
+            return words1.length < words2.length;
         });
     }
 

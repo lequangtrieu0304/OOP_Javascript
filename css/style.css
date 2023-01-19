@@ -107,9 +107,13 @@ tbody > tr:nth-child(odd) {
     padding: 5px 5px;
     margin: 1rem 0.2rem;
     border-radius: 0;
-    background-color: #f2f2f2;
+    background-color: rgba(255, 0, 0, 0.459);
     border: 1px solid black;
     font-size: 15px;
+}
+
+.action-button button:hover {
+    background-color: antiquewhite;
 }
 
 .action-button {

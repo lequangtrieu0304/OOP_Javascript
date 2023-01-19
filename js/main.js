@@ -69,13 +69,11 @@ const showDanhSach = (domSinhVien) => {
     domSinhVien.innerHTML = listSinhVien.inDanhSach();
 }
 
-const setLocalStorage = () => {
+const setLocalStorage = () => { 
     let danhSachSinhVien = listSinhVien.dssv;
     localStorage.setItem('listSV', JSON.stringify(danhSachSinhVien));
     console.log(listSinhVien.sapXepTheoTen());
 }
-
-
 
 const getLocalStorage = () => {
     let danhSachSinhVien = localStorage.getItem('listSV');
